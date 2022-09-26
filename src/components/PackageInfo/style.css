@@ -1,0 +1,26 @@
+.delivery-status-section {
+    padding: 10px;
+    text-align: start;
+    border: 1px solid darkgray;
+    border-radius: 4px;
+    width: 40%;
+    background-color: rgb(228, 226, 226);;
+}
+
+.bold {
+    font-weight: 900;
+}
+
+@media (max-width: 768px) {
+    .delivery-status-section {
+        width: 50%;
+    }
+}
+
+@media (max-width: 576px) {
+    .delivery-status-section {
+        padding: 5px;
+        width: 97%;
+    }
+}
+

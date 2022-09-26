@@ -1,0 +1,23 @@
+.MuiToggleButtonGroup-root.css-1gjgmky-MuiToggleButtonGroup-root {
+    display: flex;
+    padding-top: 40px;
+}
+
+
+@media (max-width: 576px) {
+    #container {
+        text-align: center;
+    }
+    #top-buttons {
+        text-align: center;
+        padding-top: 20px;
+    }
+   
+
+    #top-btn-left, #top-btn-right {
+        width: 50%;
+        height: 60px;
+    }
+    
+}
+

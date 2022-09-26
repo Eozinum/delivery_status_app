@@ -1,0 +1,9 @@
+.check-status-history-section {
+    display: flex;
+}
+
+@media (max-width: 576px) {
+    .check-status-history-section {
+        flex-direction: column;
+    }
+}

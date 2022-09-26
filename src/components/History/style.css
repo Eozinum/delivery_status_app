@@ -1,0 +1,33 @@
+.history-section {
+    text-align: start;
+    border: 1px solid darkgray;
+    width: 25%;
+    padding: 10px;
+    border-radius: 4px;
+    margin-left: 50px;
+    background-color: rgb(228, 226, 226);
+}
+
+.css-ahj2mt-MuiTypography-root {
+    padding-top: 15px;
+}
+
+.css-ahj2mt-MuiTypography-root:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .history-section {
+        width: 40%;
+    }
+}
+
+@media (max-width: 576px) {
+    .history-section {
+        padding: 5px;
+        margin-top: 10px;
+        margin-left: 0;
+        width: 97%;
+    }
+}
+

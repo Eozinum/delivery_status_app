@@ -1,0 +1,36 @@
+.form-section{
+    display: flex;
+    margin: 40px 0;
+}
+
+.input-form {
+    width: 55%;
+}
+
+.MuiButtonBase-root.btn-form { 
+margin-left: 40px;
+}
+
+@media (max-width: 768px) {
+    .input-form {
+        width: 69%;
+    }
+    .MuiButtonBase-root.btn-form {
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .form-section {
+        flex-direction: column;
+    }
+    .input-form {
+        width: 100%;
+    }
+    .MuiButtonBase-root.btn-form {
+        margin-top: 10px;
+        margin-left: 0;
+    }
+}
+
+
