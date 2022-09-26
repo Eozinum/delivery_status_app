@@ -1,0 +1,42 @@
+.css-ag7rrr-MuiTypography-root {
+    text-align: start;
+}
+
+.departments-container {
+    padding-top: 40px;
+}
+
+.departments-form {
+    display: flex;
+    margin-top: 20px;
+}
+
+#departments-form-btn {
+    margin-left: 40px;
+}
+
+.departments-form-input {
+    width: 55%;
+}
+
+@media (max-width: 768px) {
+    .departments-form-input{
+        width: 69%;
+    }
+    #departments-form-btn {
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .departments-form {
+        flex-direction: column;
+    }
+    .departments-form-input {
+        width: 100%;
+    }
+    #departments-form-btn {
+        margin-top: 10px;
+        margin-left: 0;
+    }
+}
