@@ -7,11 +7,13 @@ import './style.css'
 
 
 export const CheckStatus = () => {
-    return <>
-    <Form></Form>
-    <Box className="check-status-history-section">   
-        <PackageInfo />
-        <History></History>
-    </Box>
+    return ( 
+    <>
+        <Form />
+        <Box className="check-status-history-section">   
+            <PackageInfo />
+            <History />
+        </Box>
     </>
+    )
 }

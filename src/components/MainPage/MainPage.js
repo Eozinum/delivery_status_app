@@ -25,7 +25,8 @@ export const MainPage = () => {
     setAlignment(newAlignment);
   };
 
-    return <Container id="container">
+    return (
+    <Container id="container">
         <ToggleButtonGroup id="top-buttons" color="error" exclusive
           onChange={handleChange}
           value={alignment}
@@ -34,6 +35,6 @@ export const MainPage = () => {
           <ToggleButton id="top-btn-right" onClick={onDepartmentClick} value='departments'>Departments List</ToggleButton>
         </ToggleButtonGroup>
         {isStatus && !isDepartments ? <CheckStatus /> : <DepartmentList/>}
-
     </Container>
+    )
 }
