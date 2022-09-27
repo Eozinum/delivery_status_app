@@ -1,21 +1,16 @@
 /* eslint-disable no-undef */
-export const addToStorage = (numberTTN) => {
-    localStorage.setItem(numberTTN, numberTTN)
-}
+export const addToStorage = (store) => {
+  localStorage.setItem("delivery_app", JSON.stringify(store));
+};
 
 export const clearStorage = () => {
-    localStorage.clear()
-}
+  localStorage.removeItem("delivery_app");
+};
 
 export const getAllItems = () => {
-    var values = [],
-        keys = Object.keys(localStorage),
-        i = keys.length;
-
-    while ( i-- ) {
-        values.push(localStorage.getItem(keys[i]) );
-    }
-
-    return values;
-}
-
+  if (localStorage.getItem("delivery_app")) {
+    return JSON.parse(localStorage.getItem("delivery_app"));
+  } else {
+    return [];
+  }
+};

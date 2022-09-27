@@ -17,8 +17,7 @@ export const CheckStatus = () => {
   const [packageTTN, setPackageTTN] = useState("");
   const [packageInfo, setPackageInfo] = useState(INITIAL_PACKAGE_INFO);
   const [open, setOpen] = useState(false);
-  const [history, setHistory] = useState([]);
-  const storage = getAllItems();
+  const [history, setHistory] = useState(getAllItems());
   const handleClose = () => setOpen(false);
 
   const onHistoryItemClick = (numberTTN) => {
@@ -34,9 +33,20 @@ export const CheckStatus = () => {
     if (!checkTtnNumber(packageTTN)) {
       setOpen(true);
     } else {
-      setHistory((prevHistory) => [...prevHistory, packageTTN]);
+      setHistory((prevHistory) => {
+        const store = [...prevHistory, packageTTN];
+        addToStorage(store);
+        return store;
+      });
       getPackageInfo(packageTTN).then((data) => setPackageInfo(data));
     }
+  };
+
+  const onDeleteClick = () => {
+    clearStorage();
+    setHistory([]);
+    setPackageInfo(INITIAL_PACKAGE_INFO);
+    setPackageTTN("");
   };
 
   return (
@@ -84,7 +94,7 @@ export const CheckStatus = () => {
         <History
           history={history}
           onHistoryItemClick={onHistoryItemClick}
-          clearStorage={clearStorage}
+          onDelete={onDeleteClick}
         />
       </Box>
     </>
