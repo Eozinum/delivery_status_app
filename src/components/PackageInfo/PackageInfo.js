@@ -1,12 +1,14 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 import {Box, Typography} from '@mui/material'
 import './style.css'
-export const PackageInfo = () => {
+export const PackageInfo = ({status, sent, got}) => {
+
     return (
     <Box className="delivery-status-section">
-        <Typography><span className="bold">Delivery status:</span> Одержано</Typography>
-        <Typography><span className="bold">Sent:</span> Відділення №17 (до 30 кг): вул. Розумовська, 29</Typography>
-        <Typography><span className="bold">Received:</span> Відділення №13 (до 30 кг): просп. Гагаріна, 43</Typography>
+        <Typography><span className="bold">Статус відправлення:</span> {status}</Typography>
+        <Typography><span className="bold">Відправлено:</span> {sent}</Typography>
+        <Typography><span className="bold">Отримано:</span> {got}</Typography>
     </Box>
     )
 }

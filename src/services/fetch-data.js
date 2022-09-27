@@ -16,3 +16,25 @@ export const getDepartments = (cityName) => {
         }
     }).then((resp) => resp.data.data)
 }
+
+export const getPackageInfo = (packageNumber) => {
+    return axios.post(API_URL, {
+        "apiKey": API_KEY,
+        "modelName": "TrackingDocument",
+        "calledMethod": "getStatusDocuments",
+        "methodProperties": {
+            "Documents": [
+                {
+                    "DocumentNumber": packageNumber,
+                    "Phone": ""
+                }
+            ]
+        }
+    }).then((resp) => resp.data.data[0])
+}
+
+
+
+// 20450590227047
+// 20450590227046
+// 20450590227045

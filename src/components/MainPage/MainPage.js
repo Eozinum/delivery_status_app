@@ -31,8 +31,8 @@ export const MainPage = () => {
           onChange={handleChange}
           value={alignment}
           aria-label="Platform">
-          <ToggleButton id="top-btn-left" onClick={onCheckClick} value='status' >Check Status TTN</ToggleButton>
-          <ToggleButton id="top-btn-right" onClick={onDepartmentClick} value='departments'>Departments List</ToggleButton>
+          <ToggleButton id="top-btn-left" onClick={onCheckClick} value='status' >Перевірити статус ТТН</ToggleButton>
+          <ToggleButton id="top-btn-right" onClick={onDepartmentClick} value='departments'>Список відділень</ToggleButton>
         </ToggleButtonGroup>
         {isStatus && !isDepartments ? <CheckStatus /> : <DepartmentList/>}
     </Container>
