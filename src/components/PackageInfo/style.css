@@ -7,6 +7,10 @@
     background-color: rgb(228, 226, 226);;
 }
 
+.css-ahj2mt-MuiTypography-root {
+    padding-top: 10px;
+}
+
 .bold {
     font-weight: 900;
 }

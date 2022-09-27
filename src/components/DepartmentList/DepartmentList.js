@@ -21,7 +21,7 @@ export const DepartmentList = () => {
     <Box className="departments-container">
         <Typography variant="h5">Deparments</Typography>
         <Box className="departments-form">
-            <TextField onChange={onInputChange} className='departments-form-input' label="Enter city" color="error" focused type='text'/>
+            <TextField onChange={onInputChange} className='departments-form-input' label="Введіть місто" color="error" focused type='text'/>
             <Button onClick={onBtnClick} id='departments-form-btn' variant="contained" color="error">Get departments</Button>
         </Box>
         <List>

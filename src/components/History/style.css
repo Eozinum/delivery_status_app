@@ -6,14 +6,7 @@
     border-radius: 4px;
     margin-left: 50px;
     background-color: rgb(228, 226, 226);
-}
-
-.css-ahj2mt-MuiTypography-root {
-    padding-top: 15px;
-}
-
-.css-ahj2mt-MuiTypography-root:hover {
-    cursor: pointer;
+    text-align: center;
 }
 
 @media (max-width: 768px) {
