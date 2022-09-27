@@ -6,29 +6,32 @@ import { Box, TextField, Button, Modal, Typography } from "@mui/material";
 import "./style.css";
 import { getPackageInfo } from "../../services/fetch-data";
 import { checkTtnNumber } from "../../services/check-input";
-import { INITIAL_PACKAGE_INFO } from "../../constants/constants";
-import { style_modal } from "../../constants/constants";
-import { addToStorage } from "../../services/storage";
-import { getAllItems, clearStorage } from "../../services/storage";
+import { INITIAL_PACKAGE_INFO, style_modal } from "../../constants/constants";
+import {
+  addToStorage,
+  getAllItems,
+  clearStorage,
+} from "../../services/storage";
 
 export const CheckStatus = () => {
   const [packageTTN, setPackageTTN] = useState("");
   const [packageInfo, setPackageInfo] = useState(INITIAL_PACKAGE_INFO);
   const [open, setOpen] = useState(false);
   const [history, setHistory] = useState([]);
-  // const storage = getAllItems();
+  const storage = getAllItems();
   const handleClose = () => setOpen(false);
 
+  const onHistoryItemClick = (numberTTN) => {
+    getPackageInfo(numberTTN).then((data) => setPackageInfo(data));
+    setPackageTTN(numberTTN);
+  };
+
   const onInputChange = (e) => {
-    if (checkTtnNumber(e.target.value) === true) {
-      setPackageTTN(e.target.value);
-    } else {
-      setPackageTTN("");
-    }
+    setPackageTTN(e.target.value);
   };
 
   const onBtnClick = () => {
-    if (!packageTTN) {
+    if (!checkTtnNumber(packageTTN)) {
       setOpen(true);
     } else {
       setHistory((prevHistory) => [...prevHistory, packageTTN]);
@@ -46,6 +49,7 @@ export const CheckStatus = () => {
           focused
           className='input-form'
           type='text'
+          value={packageTTN}
         />
         <Button
           className='btn-form'
@@ -77,7 +81,11 @@ export const CheckStatus = () => {
           sent={packageInfo.WarehouseSender}
           got={packageInfo.WarehouseRecipient}
         />
-        <History history={history} clearStorage={clearStorage} />
+        <History
+          history={history}
+          onHistoryItemClick={onHistoryItemClick}
+          clearStorage={clearStorage}
+        />
       </Box>
     </>
   );
