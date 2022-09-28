@@ -1,4 +1,4 @@
-.css-ag7rrr-MuiTypography-root {
+.departments-h5 {
     text-align: start;
 }
 
@@ -11,7 +11,7 @@
     margin-top: 20px;
 }
 
-#departments-form-btn {
+.departments-form .departments-form-btn {
     margin-left: 40px;
 }
 
@@ -23,7 +23,7 @@
     .departments-form-input{
         width: 69%;
     }
-    #departments-form-btn {
+    .departments-form .departments-form-btn {
         margin-left: 10px;
     }
 }
@@ -35,7 +35,7 @@
     .departments-form-input {
         width: 100%;
     }
-    #departments-form-btn {
+    .departments-form .departments-form-btn  {
         margin-top: 10px;
         margin-left: 0;
     }

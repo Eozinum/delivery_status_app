@@ -1,5 +1,4 @@
 .history-section {
-    text-align: start;
     border: 1px solid darkgray;
     width: 25%;
     padding: 10px;
@@ -7,6 +6,9 @@
     margin-left: 50px;
     background-color: rgb(228, 226, 226);
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 @media (max-width: 768px) {

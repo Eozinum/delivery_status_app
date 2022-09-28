@@ -33,7 +33,7 @@ export const DepartmentList = () => {
 
   return (
     <Box className='departments-container'>
-      <Typography variant='h5'>Deparments</Typography>
+      <Typography className="departments-h5" variant='h5'>Deparments</Typography>
       <Box className='departments-form'>
         <TextField
           onChange={onInputChange}
@@ -45,11 +45,11 @@ export const DepartmentList = () => {
         />
         <Button
           onClick={onBtnClick}
-          id='departments-form-btn'
+          className='departments-form-btn'
           variant='contained'
           color='error'
         >
-          Відобразити відділення
+          Відобразити
         </Button>
         <Modal
           open={open}

@@ -24,20 +24,20 @@ export const MainPage = () => {
   };
 
   return (
-    <Container id='container'>
+    <Container className="container">
       <ToggleButtonGroup
-        id='top-buttons'
+        className="top-buttons"
         color='error'
         exclusive
         onChange={handleChange}
         value={alignment}
         aria-label='Platform'
       >
-        <ToggleButton id='top-btn-left' onClick={onCheckClick} value='status'>
+        <ToggleButton className='top-btn-left' onClick={onCheckClick} value='status'>
           Перевірити статус ТТН
         </ToggleButton>
         <ToggleButton
-          id='top-btn-right'
+          className='top-btn-right'
           onClick={onDepartmentClick}
           value='departments'
         >
