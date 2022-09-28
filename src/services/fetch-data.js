@@ -36,7 +36,3 @@ export const getPackageInfo = (packageNumber) => {
       return resp.data.data[0];
     });
 };
-
-// 20450590227047
-// 20450590227046
-// 20450590227045

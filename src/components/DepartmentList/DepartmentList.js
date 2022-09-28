@@ -1,5 +1,4 @@
-/* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Typography,
@@ -9,11 +8,10 @@ import {
   Button,
   Modal,
 } from "@mui/material";
-import "./style.css";
 import { getDepartments } from "../../services/fetch-data";
-import { useState } from "react";
-import { checkCityName } from "../../services/check-input";
+import { isValidCityName } from "../../services/check-input";
 import { style_modal } from "../../constants/constants";
+import "./style.css";
 
 export const DepartmentList = () => {
   const [cityName, setCityName] = useState("");
@@ -26,7 +24,7 @@ export const DepartmentList = () => {
   };
 
   const onBtnClick = () => {
-    if (!checkCityName(cityName)) {
+    if (!isValidCityName(cityName)) {
       setOpen(true);
     } else {
       getDepartments(cityName).then((data) => setDepartments(data));

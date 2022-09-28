@@ -1,6 +1,6 @@
 import { TTN_LENGTH } from "../constants/constants";
 
-export const checkTtnNumber = (ttnNumber) => {
+export const isValidTTN = (ttnNumber) => {
   return !isNaN(ttnNumber) &&
     ttnNumber.length === TTN_LENGTH &&
     (ttnNumber.startsWith("1") ||
@@ -10,7 +10,7 @@ export const checkTtnNumber = (ttnNumber) => {
     : false;
 };
 
-export const checkCityName = (cityName) => {
+export const isValidCityName = (cityName) => {
   if (!cityName) {
     return false;
   } else if (!isNaN(cityName)) {

@@ -3,15 +3,15 @@ import React, { useState } from "react";
 import { History } from "../History/History";
 import { PackageInfo } from "../PackageInfo/PackageInfo";
 import { Box, TextField, Button, Modal, Typography } from "@mui/material";
-import "./style.css";
 import { getPackageInfo } from "../../services/fetch-data";
-import { checkTtnNumber } from "../../services/check-input";
+import { isValidTTN } from "../../services/check-input";
 import { INITIAL_PACKAGE_INFO, style_modal } from "../../constants/constants";
 import {
   addToStorage,
   getAllItems,
   clearStorage,
 } from "../../services/storage";
+import "./style.css";
 
 export const CheckStatus = () => {
   const [packageTTN, setPackageTTN] = useState("");
@@ -30,7 +30,7 @@ export const CheckStatus = () => {
   };
 
   const onBtnClick = () => {
-    if (!checkTtnNumber(packageTTN)) {
+    if (!isValidTTN(packageTTN)) {
       setOpen(true);
     } else {
       setHistory((prevHistory) => {
