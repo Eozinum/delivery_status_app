@@ -9,3 +9,13 @@ export const checkTtnNumber = (ttnNumber) => {
     ? true
     : false;
 };
+
+export const checkCityName = (cityName) => {
+  if (!cityName) {
+    return false;
+  } else if (!isNaN(cityName)) {
+    return false;
+  } else {
+    return true;
+  }
+};

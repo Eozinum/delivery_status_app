@@ -7,20 +7,30 @@ import {
   ListItem,
   TextField,
   Button,
+  Modal,
 } from "@mui/material";
 import "./style.css";
 import { getDepartments } from "../../services/fetch-data";
 import { useState } from "react";
+import { checkCityName } from "../../services/check-input";
+import { style_modal } from "../../constants/constants";
 
 export const DepartmentList = () => {
   const [cityName, setCityName] = useState("");
   const [departments, setDepartments] = useState([]);
+  const [open, setOpen] = useState(false);
+  const handleClose = () => setOpen(false);
+
   const onInputChange = (e) => {
     setCityName(e.target.value);
   };
 
   const onBtnClick = () => {
-    getDepartments(cityName).then((data) => setDepartments(data));
+    if (!checkCityName(cityName)) {
+      setOpen(true);
+    } else {
+      getDepartments(cityName).then((data) => setDepartments(data));
+    }
   };
 
   return (
@@ -43,6 +53,21 @@ export const DepartmentList = () => {
         >
           Відобразити відділення
         </Button>
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby='modal-modal-title'
+          aria-describedby='modal-modal-description'
+        >
+          <Box sx={style_modal}>
+            <Typography id='modal-modal-title' variant='h6' component='h2'>
+              Помилка!
+            </Typography>
+            <Typography id='modal-modal-description' sx={{ mt: 2 }}>
+              Вкажіть назву міста
+            </Typography>
+          </Box>
+        </Modal>
       </Box>
       <List>
         {departments.map((department, i) => (
