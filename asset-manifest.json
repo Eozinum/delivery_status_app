@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/delivery_status_app/static/css/main.42769b14.css",
-    "main.js": "/delivery_status_app/static/js/main.cf72037e.js",
-    "index.html": "/delivery_status_app/index.html",
-    "main.42769b14.css.map": "/delivery_status_app/static/css/main.42769b14.css.map",
-    "main.cf72037e.js.map": "/delivery_status_app/static/js/main.cf72037e.js.map"
+    "main.css": "./static/css/main.42769b14.css",
+    "main.js": "./static/js/main.cf72037e.js",
+    "index.html": "./index.html",
+    "main.42769b14.css.map": "./static/css/main.42769b14.css.map",
+    "main.cf72037e.js.map": "./static/js/main.cf72037e.js.map"
   },
   "entrypoints": [
     "static/css/main.42769b14.css",
