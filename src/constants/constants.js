@@ -18,3 +18,5 @@ export const style_modal = {
   boxShadow: 24,
   p: 4,
 };
+
+export const TODAY = new Date()
